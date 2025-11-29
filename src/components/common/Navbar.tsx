@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { MainButton } from './';
 import Image from 'next/image';
 import Icons from './Icons';
+import { Icon } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -22,6 +23,27 @@ export default function Navbar() {
     <nav className="bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-3">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-blue-dark md:hidden hover:text-[#2a2066] relative flex flex-col items-center gap-1 focus:outline-none"
+          >
+            <span
+              className={`   inline-block h-0.5 bg-blue-dark transition-all duration-300 
+      ${isOpen ? "rotate-45 translate-y-1.5 w-5" : "w-8"} `}
+            ></span>
+            <span
+              className={`
+      inline-block  h-0.5 bg-blue-dark transition-all duration-300
+      ${isOpen ? "-rotate-225 -translate-y-2 mt-2 w-5" : "w-8"}
+    `}
+            ></span>
+
+            {/* Text */}
+            <p className="leading-none text-xs">
+              {isOpen ? "Close" : "Menu"}
+            </p>
+          </button>
+
           <div className="flex items-center space-x-8">
             <Link href="/">
               <Image width={40} height={40} src={'/images/png/main-logo.png'} alt='main-logo.png' />
@@ -51,37 +73,15 @@ export default function Navbar() {
               </span>
             </MainButton>
           </div>
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-blue-dark hover:text-[#2a2066] focus:outline-none"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+          <div className="bg-blue-dark md:hidden w-8 h-8 flex justify-center items-center rounded-full">
+            <Icons icon='user' />
           </div>
         </div>
 
       </div>
-      <div className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsOpen(false)}></div>
-        <div className={`absolute right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+      <div className={`md:hidden fixed mt-16 inset-0 z-50 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`absolute left-0 top-0 h-full w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}>
-          <div className="flex justify-end p-4">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-blue-dark hover:text-[#2a2066] focus:outline-none"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
           <div className="px-6 space-y-4">
             {navItems.map((item) => (
               <Link

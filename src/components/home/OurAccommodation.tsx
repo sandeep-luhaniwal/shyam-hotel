@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { Dropdown, MainButton } from '../common';
+import Icons from "../common/Icons";
 
 const OurAccommodation = () => {
     const [rooms, setRooms] = useState([
@@ -114,7 +115,9 @@ const OurAccommodation = () => {
                                                 `, ${rooms.reduce((acc, r) => acc + r.children, 0)} children`
                                             }
                                         </span>
-                                        <span className="text-gray-400">⌄</span>
+                                        <span className="text-gray-400">
+                                            <Icons icon="downarrow" />
+                                        </span>
                                     </div>
                                 }
                             >
