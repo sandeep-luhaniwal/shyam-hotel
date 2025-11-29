@@ -44,9 +44,11 @@ export default function Navbar() {
             </div>
           </div>
           <div className="hidden md:block">
-            <MainButton className='flex justify-center items-center gap-2'>
-              <Icons icon='user' />
-              Sign In / Sign Up
+            <MainButton >
+              <span className='flex justify-center items-center gap-2'>
+                <Icons icon='user' />
+                Sign In / Sign Up
+              </span>
             </MainButton>
           </div>
           <div className="md:hidden flex items-center">
@@ -93,9 +95,11 @@ export default function Navbar() {
             ))}
           </div>
           <div className="px-6 py-6">
-            <MainButton className='flex justify-center items-center gap-2'>
-              <Icons icon='user' />
-              Sign In / Sign Up
+            <MainButton >
+              <span className='flex justify-center items-center gap-2'>
+                <Icons icon='user' />
+                Sign In / Sign Up
+              </span>
             </MainButton>
           </div>
         </div>

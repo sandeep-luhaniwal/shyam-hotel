@@ -15,14 +15,14 @@ export default function MainButton({ children, url, onClick,className }: MainBut
 
   if (url) {
     return (
-      <Link href={url} className={`${baseClasses} !${className}`}>
+      <Link href={url} className={`${baseClasses} ${className}`}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={`${baseClasses} !${className}`}>
+    <button onClick={onClick} className={`${baseClasses} ${className}`}>
       {children}
     </button>
   );
