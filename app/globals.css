@@ -12,6 +12,22 @@ body {
 
 @theme inline {
   --color-blue-dark: #1e1852;
-  --off-black:#3e3d48;
-  
+  --off-black: #3e3d48;
+
+}
+
+.swiper-button-prev:hover{
+  background-color: #38326c;
+}
+
+.swiper-button-prev:hover svg path{
+  fill: white;
+}
+
+.swiper-button-next:hover{
+  background-color: #38326c;
+}
+
+.swiper-button-next:hover svg path{
+  fill: white;
 }
