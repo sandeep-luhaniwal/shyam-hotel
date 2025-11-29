@@ -8,10 +8,13 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#050033] text-white px-4 md:px-14 xl:px-[60px]">
-      <div className="pt-4 pb-12 md:pb-14 xl:pb-16 xl:px-16">
-        <hr className="opacity-60" />
+      <div className="pt-10 pb-12 md:pb-14 xl:pb-16 xl:px-16">
+        <div>
+          <hr className="opacity-60 mt-10" />
+          <div className="w-40 h-16 bg-[#068484] mx-auto mt-[-33px]"></div>
+        </div>
         <hr className="opacity-20 my-5 xl:my-8" />
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 py-2">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 pt-3 sm:pt-10 pb-2">
           {FOOTER_DATA_LIST.map((obj) => (
             <div key={obj.title}>
               <h3 className="font-semibold mb-4">{obj.title}</h3>
@@ -46,7 +49,7 @@ export default function Footer() {
           ))}
         </div>
         <hr className="opacity-20 my-5 xl:my-8" />
-        <div className="flex items-center justify-center flex-wrap gap-5 xl:gap-8 text-white py-4 text-[10px] sm:text-sm">
+        <div className="flex items-center justify-center flex-wrap gap-5 xl:gap-8 text-white py-4 text-sm">
           {FOOTER_LINKS.map((item) => (
             <a
               key={item.name}
@@ -68,13 +71,13 @@ export default function Footer() {
         <div className="flex gap-5 justify-center my-2">
           <Image
             src="/images/jpg/logo-fevad.jpg"
-            alt="Description of my remote image"
+            alt="logo-fevad"
             width={42}
             height={42}
           />
           <Image
             src="/images/jpg/logo-fevad.jpg"
-            alt="Description of my remote image"
+            alt="logo-fevad"
             width={42}
             height={42}
           />

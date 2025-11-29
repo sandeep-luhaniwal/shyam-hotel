@@ -1,3 +1,5 @@
+import ProgressBar from "./ProgressBar";
+
 export const NAVBAR_DATA_LIST = [
   {
     title: "home",
@@ -13,39 +15,31 @@ export const NAVBAR_DATA_LIST = [
   },
 ];
 
-// footerData.ts
-
 export const FOOTER_DATA_LIST = [
   {
-    title: "Company",
+    title: "Home",
     url: "/",
-    links: [
-      "Accor Group",
-      "Management & franchises",
-      "Careers",
-      "Sustainable development",
-      "Affiliate programme",
-    ],
+    links: ["Management & franchises", "Careers", "Accor Group"],
   },
   {
-    title: "Professional Solutions",
+    title: "Rooms",
     url: "/",
-    links: ["Business travel", "Meetings & events", "Travel professionals"],
+    links: ["Business travel", "Travel professionals"],
   },
   {
-    title: "Navigation",
+    title: "Services",
     url: "/",
-    links: ["Web accessibility", "Sitemap", "All languages"],
+    links: ["Web accessibility"],
   },
   {
-    title: "Mobile App",
+    title: "About",
     url: "/",
-    links: ["Mobile services", "iOS app", "Android app"],
+    links: ["Mobile services", "iOS app"],
   },
   {
-    title: "Need help?",
+    title: "Contact",
     url: "/",
-    links: ["Manage booking", "Support"],
+    links: ["Manage booking"],
   },
 ];
 
@@ -112,12 +106,26 @@ export const FOOTER_SOCIAL_ICONS = [
 ];
 
 export const FOOTER_LINKS = [
-  { name: "T&Cs", link: "#" },
-  { name: "Adagio T&Cs", link: "#" },
-  { name: "Membership T&Cs", link: "#" },
-  { name: "Privacy", link: "#" },
+  { name: "Privacy", link: "/privacy" },
   { name: "Cookies", link: "#" },
-  { name: "Legal Notice", link: "#" },
-  { name: "Do Not Sell My Personal Information", link: "#" },
+  { name: "Legal Notice", link: "/legal-notice" },
 ];
 
+export const USERS_HEADING_DATA = [
+  { name: "All", value: "100%" },
+  { name: "About", value: "20%" },
+  { name: "Services", value: "4%" },
+  { name: "Tabs", value: "60%" },
+];
+
+export const RATING_LEFT_DATA = [
+  { title: "Service", reviews: 3835, score: 9.1 },
+  { title: "Food", reviews: 1775, score: 8.6 },
+  { title: "Location", reviews: 938, score: 9.1 },
+];
+
+export const RATING_RIGHT_DATA = [
+  { title: "WiFi", reviews: 25, score: 9.5 },
+  { title: "Breakfast", reviews: 917, score: 8.8 },
+  { title: "Room", reviews: 1695, score: 6.7 },
+];
