@@ -44,10 +44,29 @@ const Hero = () => {
     
     const totalPhotos = mediaData.length;
 
+    const getVisibleImages = () => {
+        if (typeof window !== 'undefined') {
+            const width = window.innerWidth;
+            if (width >= 1024) return images; // lg: 4 images
+            if (width >= 768) return images.slice(0, 3); // md: 3 images  
+            if (width >= 640) return images.slice(0, 2); // sm: 2 images
+            return images.slice(0, 1); // mobile: 1 image
+        }
+        return images;
+    };
+
+    const [visibleImages, setVisibleImages] = useState(getVisibleImages());
+
+    React.useEffect(() => {
+        const handleResize = () => setVisibleImages(getVisibleImages());
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="max-w-[1920px] mx-auto px-4 pt-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {images.map((src, index) => (
+                {visibleImages.map((src, index) => (
                     <div key={index} className="relative aspect-square overflow-hidden rounded-sm cursor-pointer" onClick={() => setShowPopup(true)}>
                         <Image
                             src={src}
@@ -55,7 +74,7 @@ const Hero = () => {
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-300"
                         />
-                        {index === images.length - 1 && (
+                        {index === visibleImages.length - 1 && (
                             <div className="absolute bottom-2 right-2 max-w-max rounded-full bg-black/50 px-3 py-2">
                                 <Paragraph sm className='flex items-center gap-2'>
                                     <Icons icon='copy' /> {totalPhotos} photos

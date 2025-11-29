@@ -47,6 +47,16 @@ const Icons = ({ icon, className, ...props }: ICONS_PROPS) => {
                 <path fill="#fff" d="M7 1L5.6 2.5L13 10l-7.4 7.5L7 19l9-9z" />
             </svg>
         ),
+        "menu": (
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 8.5h16m-16 7h16" />
+            </svg>
+        ),
+        "downarrow": (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#000" d="M10.103 12.778L16.81 6.08a.69.69 0 0 1 .99.012a.726.726 0 0 1-.012 1.012l-7.203 7.193a.69.69 0 0 1-.985-.006L2.205 6.72a.727.727 0 0 1 0-1.01a.69.69 0 0 1 .99 0z" />
+            </svg>
+        ),
 
     };
     return icon ? iconsList[icon] || null : null;

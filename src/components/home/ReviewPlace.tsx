@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { MainButton } from '../common'
+import Icons from '../common/Icons';
 
 const HotelInfoAccordion = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const HotelInfoAccordion = () => {
                     <h4 className="font-semibold text-blue-dark">Hotel Information</h4>
                     <span className={`text-blue-dark transition-transform duration-200 ${
                         isOpen ? 'rotate-180' : ''
-                    }`}>⌄</span>
+                    }`}><Icons icon='downarrow' /></span>
                 </div>
             </div>
             
